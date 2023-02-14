@@ -1,6 +1,4 @@
-//your code here
-const inputElemenet = document.getElementTagName("input")[0];
-const inputs = inputElemenet.value;
-const arr = inputs.split(',');
-
-console.log(arr);
+function findMinCost() {
+	const arr = document.querySelector('input')[0].value.split('');
+	alert(arr);
+}
