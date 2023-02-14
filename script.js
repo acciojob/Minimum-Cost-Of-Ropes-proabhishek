@@ -1,20 +1,25 @@
-function findMinCost(e) {
-	//alert(e);
-	e.preventDefault();
-	const arr = document.querySelector('input').value.split(',');
-	arr.sort(function(a,b) {return a-b});
-	var cost = 0;
-	//alert(cost);
+function minCostToFormRope(event) {
+	
+	event.preventDefault();
+	var inputElement = document.querySelector('input').value;
+	var arr = inputElement.split(',');
+	arr.sort(function (a,b) { return a-b});
+
+	// we need to access first two element 
+	// add them & store in a variable res
+
+	// add the res in array 
+	// increment cost by res
+    var cost = 0;
 	while(arr.length > 1) {
-		var first = arr.shift();
-		var second = arr.shift();
-		var res = Number(first) + Number(second);
+		var res = Number(arr[0]) + Number(arr[1]);
 		arr.push(res);
 		cost += res;
-		arr.sort(function (a,b) { return a-b; });
-	}
-    //alert(cost);
-	document.querySelector('#result').textContent = cost;
-}
+        arr.shift();
+		arr.shift();
 
-document.getELe
+		arr.sort(function (a,b) { return a-b});
+	}
+
+	document.getElementById("result").textContent = cost;
+}
