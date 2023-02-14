@@ -2,7 +2,7 @@ function findMinCost(e) {
 	//alert(e);
 	e.preventDefault();
 	const arr = document.querySelector('input').value.split(',');
-	//arr.sort(function(a,b) {return a-b});
+	arr.sort(function(a,b) {return a-b});
 	var cost = 0;
 	//alert(cost);
 	while(arr.length > 1) {
